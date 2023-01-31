@@ -1,0 +1,139 @@
+.subscribe {
+    background: $LightColor;
+
+    & .container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        @media screen and (max-width: 550px) {
+            padding-top: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 80px;
+        line-height: 85px;
+        font-weight: 500;
+        color: $DarkColor;
+
+        @media screen and (max-width: 768px) {
+            font-size: 60px;
+        }
+
+        @media screen and (max-width: 550px) {
+            font-size: 40px;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 400px;
+        color: $DarkColor;
+        margin-top: 30px;
+        line-height: 20px;
+
+        @media screen and (max-width: 550px) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.form {
+    margin-top: 15px;
+
+    @media screen and (max-width: 550px) {
+        margin-top: 20px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media screen and (max-width: 550px) {
+            row-gap: 10px;
+        }
+    }
+
+    &__column {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @media screen and (max-width: 550px) {
+            row-gap: 10px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        max-width: 400px;
+        padding: 13px 20px 15px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+
+        @media screen and (max-width: 550px) {
+            padding: 13px 20px 15px;
+        }
+    }
+
+    & .input {
+        font-size: 0.875rem;
+        line-height: 20px;
+        color: $DarkColor;
+
+        &.email,
+        &.phone {
+            @media screen and (max-width: 550px) {
+                line-height: 18px;
+            }
+        }
+
+        &.error {
+            border-color: red;
+            color: red;
+            background: rgba(255, 0, 0, 0.05);
+        }
+    }
+
+    & .err {
+        color: red;
+        font-size: 12px;
+    }
+
+    &__submit {
+        padding: 13px 20px 15px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        font-size: 1rem;
+        line-height: 20px;
+        margin-top: 20px;
+        color: $DarkColor;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        @media screen and (max-width: 768px) {
+            font-size: 0.875rem;
+            line-height: 18px;
+        }
+
+        @media screen and (max-width: 550px) {
+            margin-top: 10px;
+            font-size: 0.875rem;
+            line-height: 18px;
+            padding: 11px 18px 13px;
+        }
+
+        &:hover {
+            background: $ButtonColor;
+            border-color: $ButtonColor;
+        }
+    }
+}
