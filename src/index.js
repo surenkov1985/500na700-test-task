@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	const mediaQuery = window.matchMedia("(max-width: 550px)");
 	let mobileWidth = false;
 
+	// Open mobile menu
+
 	NavButton.addEventListener("click", function (e) {
 		FalseBG.classList.add("show");
 		FalseNavbar.classList.add("active");
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			item.classList.remove("show");
 		});
 	});
+
+	//  Close mobile menu
 
 	FalseBG.addEventListener("click", function (e) {
 		if (e.target.classList.contains("false__navbar-bg")) {
@@ -54,9 +58,23 @@ document.addEventListener("DOMContentLoaded", function () {
 		FalseNavbar.classList.remove("active");
 	});
 
+	// News slider toggle
+
+	function mediaChange(e) {
+		if (e.matches) {
+			newsSlider.enable();
+			mobileWidth = true;
+		} else {
+			newsSlider.disable();
+			mobileWidth = false;
+		}
+	}
+
 	mediaChange(mediaQuery);
 
 	mediaQuery.addListener(mediaChange);
+
+	// Subitems toggled
 
 	NavbarItem.forEach((item) => {
 		const Link = item.querySelector(".navbar__link");
@@ -95,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+	// Frequentlies toggled
+
 	Questions.forEach((item) => {
 		const submenuId = item.dataset.toggle;
 		const Submenu = document.getElementById(submenuId);
@@ -112,6 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+	// Slider head
+
 	const headSlider = new Swiper(".mySlider", {
 		spaceBetween: 20,
 		loop: true,
@@ -127,14 +149,4 @@ document.addEventListener("DOMContentLoaded", function () {
 			nextEl: ".slider__button-next",
 		},
 	});
-
-	function mediaChange(e) {
-		if (e.matches) {
-			newsSlider.enable();
-			mobileWidth = true;
-		} else {
-			newsSlider.disable();
-			mobileWidth = false;
-		}
-	}
 });

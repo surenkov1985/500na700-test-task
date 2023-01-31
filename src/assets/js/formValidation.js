@@ -113,7 +113,6 @@ inputEvents.forEach((event) => {
 	});
 });
 
-
 function testValue(elem, reg, string) {
 	if (elem.dataset.reg === "true") {
 		let str = elem.value;
